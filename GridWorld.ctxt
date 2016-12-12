@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=GridWorld
+comment1.params=
+comment1.target=GridWorld()
+comment2.params=actor\ x\ y
+comment2.target=void\ addObjectToGrid(greenfoot.Actor,\ int,\ int)
+comment3.params=level
+comment3.target=void\ maakLevel(TegelType[][])
+numComments=4

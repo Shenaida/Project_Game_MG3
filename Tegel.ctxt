@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Tegel
+comment1.params=noord\ oost\ zuid\ west\ isStart\ isEind\ achtergrondplaatje
+comment1.target=Tegel(boolean,\ boolean,\ boolean,\ boolean,\ boolean,\ boolean,\ java.lang.String)
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=boolean\ controleerOplossing()
+numComments=4
