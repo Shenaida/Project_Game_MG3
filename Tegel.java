@@ -1,19 +1,19 @@
 import greenfoot.*;
+import java.util.HashMap;
 
 public class Tegel extends Actor
 {
-    public boolean Noord;
-    public boolean Oost;
-    public boolean Zuid;
-    public boolean West;
+    public HashMap<Richting, Boolean> Open;
     public boolean IsEind;
     public boolean IsStart;
     
     public Tegel(boolean noord,boolean oost,boolean zuid,boolean west, boolean isStart, boolean isEind, String achtergrondplaatje) {
-        Noord=noord;
-        Oost=oost;
-        Zuid=zuid;
-        West=west;
+        Open=new HashMap<Richting,Boolean>(){{
+            put(Richting.Noord,noord);
+            put(Richting.Oost,oost);
+            put(Richting.Zuid,zuid);
+            put(Richting.West,west);
+        }};
         IsStart=isStart;
         IsEind=isEind;
         
@@ -26,17 +26,24 @@ public class Tegel extends Actor
         if (Greenfoot.mouseClicked(this)&& !IsStart && !IsEind)
         {   
             turn(-90);
-            // boolean oplossing=controlleerOplossing();
+            Rotate();
+            GridWorld gridWorld = (GridWorld) getWorld();  // get a reference to the world
+            gridWorld.getCounter().incrementScore();
+            Tegel[][] huidigLevel=gridWorld.getHuidigLevel();
+            boolean isOplossing=gridWorld.getGameMaster().ControlleerOplossing(huidigLevel);
+            if (isOplossing)
+            {
+                Greenfoot.stop();
+            }
         }
     }
     
-    public boolean controleerOplossing()
+    public void Rotate()
     {
-        // GridWorld myWorld = getWorldOfType();
-        
-        // TegelType[][] level=myWorld.huidiglevel;
-        
-        
-        return false;
+        boolean tmp = Open.get(Richting.Noord);
+        Open.put(Richting.Noord, Open.get(Richting.Oost));
+        Open.put(Richting.Oost, Open.get(Richting.Zuid));
+        Open.put(Richting.Zuid, Open.get(Richting.West));
+        Open.put(Richting.West, tmp);
     }
 }

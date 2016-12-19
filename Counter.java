@@ -10,8 +10,8 @@ public class Counter extends Actor
         this.updateImage();
     }
     
-    public void incrementScore(int score) {
-        this.move += move;
+    public void incrementScore() {
+        this.move += 1;
         
         this.updateImage();
     }
