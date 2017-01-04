@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=GameMaster
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ GameMaster\ here.\r\n\ \r\n\ @author\ (Shenaida)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ de\ route\ bepaling\ van\ start\ tegel\ naar\ eind\ tegel\r\n
 comment1.params=
 comment1.target=GameMaster()
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameMaster\r\n

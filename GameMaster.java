@@ -1,8 +1,5 @@
 /**
- * Write a description of class GameMaster here.
- * 
- * @author (Shenaida) 
- * @version (a version number or a date)
+ * de route bepaling van start tegel naar eind tegel
  */
 public class GameMaster  
 {
@@ -45,12 +42,14 @@ public class GameMaster
                 tegengesteldeRichting = BepaalTegenGesteldeRichting(vorigeRichting);
                 if (!huidigeTegel.Open.get(tegengesteldeRichting))
                 {
+                    huidigeTegel.MaakDroog();
                     return false;
                 }
             }
 
             if (huidigeTegel.IsEind)
             {
+                huidigeTegel.MaakNat();
                 return true;
             }
 
@@ -63,11 +62,16 @@ public class GameMaster
                     continue;
                 }
                 Coordinaat vector = BepaalVector(huidigeRichting);
+                
                 boolean mogelijkeOplossing = VindRoute(level, locatie.Plus(vector), huidigeRichting);
                 if (mogelijkeOplossing)
+                {
+                    huidigeTegel.MaakNat();
                     return true;
+                }
             }
-
+            
+            huidigeTegel.MaakDroog();
             return false;
 
         }

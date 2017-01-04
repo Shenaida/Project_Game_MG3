@@ -1,11 +1,10 @@
 /**
- * Write a description of class TegelType here.
+ * verschillende soorten tegels
  * 
- * @author (your name) 
- * @version (a version number or a date)
  */
 public enum TegelType
     {
+        Blok_mario,
         Blok,
         Lange,
         Hoek,

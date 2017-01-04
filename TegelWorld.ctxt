@@ -1,9 +1,9 @@
 #BlueJ class context
-comment0.target=GridWorld
+comment0.target=TegelWorld
 comment1.params=
-comment1.target=GridWorld()
+comment1.target=TegelWorld()
 comment2.params=
-comment2.target=Counter\ getCounter()
+comment2.target=MG3Counter\ getCounter()
 comment3.params=
 comment3.target=GameMaster\ getGameMaster()
 comment4.params=
@@ -12,4 +12,8 @@ comment5.params=actor\ x\ y
 comment5.target=void\ addObjectToGrid(greenfoot.Actor,\ int,\ int)
 comment6.params=level
 comment6.target=Tegel[][]\ maakLevel(TegelType[][])
-numComments=7
+comment7.params=
+comment7.target=TegelType[][]\ getRandomLevel()
+comment8.params=
+comment8.target=TegelType[][]\ getLevel1()
+numComments=9

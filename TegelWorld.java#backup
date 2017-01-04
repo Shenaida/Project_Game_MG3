@@ -1,55 +1,48 @@
  import greenfoot.*;
+import java.util.HashMap;
+import java.util.Random;
 
-public class GridWorld extends World
+public class TegelWorld extends World
 {
     
     private static final int gridWidth = 32;
     private static final int gridHeight = 32;
     private static Actor[][] grid = new Actor[gridWidth][gridHeight];
     
-    private int counter = 0;
-    private Counter the_counter;
+    
+    private MG3Counter the_counter;
     private GameMaster gameMaster;
     public static final int gridSize = 32;
     public Tegel[][] huidigLevel = null;
 
-    
-    
-    public GridWorld()
+       
+    public TegelWorld()
     {    
         super(gridWidth * gridSize, gridHeight * gridSize, 1);
         
-        setPaintOrder( Counter.class, Wall.class, Tegel.class);
-        the_counter=new Counter();
+        setPaintOrder( TryAgain.class, MG3Counter.class, MG3Wall.class, Tegel.class);
+        the_counter=new MG3Counter();
         addObjectToGrid(the_counter, gridWidth / 2 - 10, 0);
         
         gameMaster=new GameMaster();
         
         for (int x = 0; x < gridWidth; x++) {
-            addObjectToGrid(new Wall(), x, 0);
-            addObjectToGrid(new Wall(), x, gridHeight - 1);
+            addObjectToGrid(new MG3Wall(), x, 0);
+            addObjectToGrid(new MG3Wall(), x, gridHeight - 1);
         }
         
         for (int y = 0; y < gridHeight; y++) {
-            addObjectToGrid(new Wall(), 0, y);
-            addObjectToGrid(new Wall(), gridWidth - 1, y);
+            addObjectToGrid(new MG3Wall(), 0, y);
+            addObjectToGrid(new MG3Wall(), gridWidth - 1, y);
         }
         //eerste level
-        TegelType[][] level= new TegelType[][]
-        {
-            {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok},
-            {TegelType.Blok,TegelType.Hoek,TegelType.Lange,TegelType.Hoek,TegelType.Start, TegelType.Blok},
-            {TegelType.Blok,TegelType.Hoek,TegelType.Hoek,TegelType.Hoek,TegelType.Hoek, TegelType.Blok},
-            {TegelType.Blok,TegelType.Eind,TegelType.Hoek,TegelType.Lange,TegelType.Hoek, TegelType.Blok},
-            {TegelType.Blok,TegelType.Hoek,TegelType.Lange,TegelType.Lange,TegelType.Hoek, TegelType.Blok},
-            {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok}
-        };       
+        TegelType[][] level=getRandomLevel();       
         
         huidigLevel=maakLevel(level);
 
     }
     
-    public Counter getCounter()
+    public MG3Counter getCounter()
         {
             return the_counter;
         
@@ -98,8 +91,29 @@ public class GridWorld extends World
             return gemaaktLevel;
         }
         
-    //public Counter getCounter()
-    //{
-    //    return counter;
-    //}
+    private TegelType[][] getRandomLevel()
+    {
+        HashMap<Integer,TegelType[][]> levels= new HashMap<Integer,TegelType[][]>();
+        
+        levels.put(1,getLevel1());
+        //levels.put(2,getLevel2());
+        int numberOfLevels=levels.size();
+        Random random = new Random();
+        int levelToGet=random.nextInt(numberOfLevels)+1;
+        
+        return levels.get(levelToGet);
+    }
+    
+    private TegelType[][] getLevel1()
+    {
+        return new TegelType[][]
+        {
+            {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok},
+            {TegelType.Blok,TegelType.Hoek,TegelType.Lange,TegelType.Hoek,TegelType.Eind, TegelType.Blok},
+            {TegelType.Blok,TegelType.Hoek,TegelType.Hoek,TegelType.Hoek,TegelType.Hoek, TegelType.Blok},
+            {TegelType.Blok_mario,TegelType.Start,TegelType.Hoek,TegelType.Lange,TegelType.Hoek, TegelType.Blok},
+            {TegelType.Blok,TegelType.Hoek,TegelType.Lange,TegelType.Lange,TegelType.Hoek, TegelType.Blok},
+            {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok}
+        };
+    }
 }
