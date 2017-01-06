@@ -43,7 +43,7 @@ public class Tegel extends Actor
             boolean isOplossing=gridWorld.getGameMaster().ControlleerOplossing(huidigLevel);
             if (isOplossing)
             {
-                Greenfoot.stop();
+                gridWorld.volgendLevel();
             }
             
         }

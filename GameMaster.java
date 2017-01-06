@@ -3,10 +3,6 @@
  */
 public class GameMaster  
 {
-    
-    /**
-     * Constructor for objects of class GameMaster
-     */
     public GameMaster()
     {
     

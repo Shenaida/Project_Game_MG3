@@ -3,7 +3,6 @@ comment0.target=GameMaster
 comment0.text=\r\n\ de\ route\ bepaling\ van\ start\ tegel\ naar\ eind\ tegel\r\n
 comment1.params=
 comment1.target=GameMaster()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ GameMaster\r\n
 comment2.params=level
 comment2.target=boolean\ ControlleerOplossing(Tegel[][])
 comment3.params=level

@@ -4,7 +4,10 @@ public class TegelFabriek
 {
 
     /**
-     * eigenschap van de tegels om het pad van de leidingen aan te geven
+     * eigenschap van de tegels 
+     * -om het pad van de leidingen aan te geven
+     * -plaatje zonder water
+     * -plaatje met water
      * 
      */
     public TegelFabriek()

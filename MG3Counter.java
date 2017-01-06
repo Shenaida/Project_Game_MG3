@@ -4,9 +4,10 @@ import java.awt.Color;
 public class MG3Counter extends Actor
 {
     
-    public int move = 25;
+    public int move;
     
-    public MG3Counter() {
+    public MG3Counter(int maxMoves) {
+        move=maxMoves;
         updateImage();
     }
     
