@@ -14,8 +14,8 @@ public class TegelWorld extends World
     private GameMaster gameMaster;
     public static final int gridSize = 32;
     public Tegel[][] huidigLevel = null;
-
-       
+    
+    
     public TegelWorld()
     {    
         super(gridWidth * gridSize, gridHeight * gridSize, 1);
@@ -163,7 +163,7 @@ public class TegelWorld extends World
             {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok}
         };
         
-        return new Level(design,15);
+        return new Level(design,19);
     }
     
     private Level getLevel2()
@@ -178,7 +178,7 @@ public class TegelWorld extends World
             {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok}
         };
         
-        return new Level(design,31);
+        return new Level(design,33);
     }
     
     private Level getLevel3()
@@ -193,7 +193,7 @@ public class TegelWorld extends World
             {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok}
         };
         
-        return new Level(design,12);
+        return new Level(design,17);
     }
     
     private Level getLevel4()
@@ -238,7 +238,7 @@ public class TegelWorld extends World
             {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok}
         };
         
-        return new Level(design,35);
+        return new Level(design,31);
     }
     
     private Level getLevel7()
@@ -253,7 +253,7 @@ public class TegelWorld extends World
             {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok}
         };
         
-        return new Level(design,28);
+        return new Level(design,20);
     }
     
     private Level getLevel8()
@@ -268,7 +268,7 @@ public class TegelWorld extends World
             {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok}
         };
         
-        return new Level(design,25);
+        return new Level(design,23);
     }
     
     private Level getLevel9()
@@ -283,7 +283,7 @@ public class TegelWorld extends World
             {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok}
         };
         
-        return new Level(design,38);
+        return new Level(design,34);
     }
     
     private Level getLevel10()
@@ -313,7 +313,7 @@ public class TegelWorld extends World
             {TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok,TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok, TegelType.Blok}
         };
         
-        return new Level(design,14);
+        return new Level(design,16);
     }
     
     private Level getLevel12()
